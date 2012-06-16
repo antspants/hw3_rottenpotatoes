@@ -21,11 +21,15 @@ Background: movies have been added to database
 
   And I am on the RottenPotatoes home page
 
+##@javascript
 Scenario: sort movies alphabetically
   When I follow "Movie Title"
-  # your steps here
+  Then I should see "2001: A Space Odyssey" before "Aladdin"
+   And I should not see "Aladdin" before "2001: A Space Odyssey"
 
+##@javascript
 Scenario: sort movies in increasing order of release date
-  When i follow "Release Date"
-  # your steps here
+  When I follow "Release Date"
+  Then I should see "Chicken Run" before "Amelie"
+  And I should not see "Amelie" before "Chicken Run"
 
