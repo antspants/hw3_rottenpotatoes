@@ -13,7 +13,11 @@ group :development, :test do
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'launchy'
+
+  gem 'spork', '1.0.0.rc2'
+  gem 'spork-rails', '~> 3.2.0'
 end
 group :production do
 #  gem 'pg'
