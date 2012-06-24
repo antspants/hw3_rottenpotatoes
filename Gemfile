@@ -18,6 +18,7 @@ group :development, :test do
 
   gem 'spork', '1.0.0.rc2'
   gem 'spork-rails', '~> 3.2.0'
+  gem 'rspec-rails'
 end
 group :production do
 #  gem 'pg'
@@ -33,6 +34,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+gem 'simplecov', require: false
 
 # Use unicorn as the web server
 # gem 'unicorn'
