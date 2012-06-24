@@ -2,7 +2,7 @@
 
 Given /the following movies exist/ do |movies_table|
   movies_table.hashes.each do |movie|
-    Movie.create!(title: movie['title'], rating: movie['rating'], release_date: movie['release_date'])
+    Movie.create!(director: movie[:director], title: movie['title'], rating: movie['rating'], release_date: movie['release_date'])
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
   end
@@ -75,5 +75,10 @@ end
 
 Then /^I should not see any films$/ do
   page.should_not have_css("tbody#movielist tr") ##, count: 0) 
+end
+
+Then /^the director of "(.*?)" should be "(.*?)"$/ do |film, director|
+  page.should have_content(film)
+  page.should have_content(film)
 end
 
